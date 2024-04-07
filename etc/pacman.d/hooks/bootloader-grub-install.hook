@@ -1,9 +1,29 @@
 [Trigger]
+Operation = Install
 Operation = Upgrade
 Type = Package
 Target = grub
+Target = amd-ucode
+Target = intel-ucode
+Target = linux
+Target = linux-next*
+Target = linux-new*
+Target = linux-amd*
+Target = linux-lts*
+Target = linux-zen*
+Target = linux-rt*
+Target = linux-hardened*
+Target = linux-xanmod*
+Target = linux-tkg*
+Target = linux-raven*
+Target = linux-slim*
+Target = linux-test*
+Target = linux-main*
+Target = linux-dctxmei*
+Target = linux-froidzen*
+Target = linux-jwrdegoede*
 
 [Action]
 Description = Executing grub-install
 When = PostTransaction
-Exec = /usr/bin/grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=ArcoLinux --disable-shim-lock --removable
+Exec = /usr/bin/grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=ArcoLinux
