@@ -7,6 +7,7 @@ Target = grub
 Target = amd-ucode
 Target = intel-ucode
 Target = linux
+Target = linux-cachyos
 Target = linux-next*
 Target = linux-new*
 Target = linux-amd*
