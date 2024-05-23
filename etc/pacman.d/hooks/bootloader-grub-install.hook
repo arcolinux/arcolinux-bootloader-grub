@@ -28,4 +28,11 @@ Target = linux-jwrdegoede*
 [Action]
 Description = Executing grub-install
 When = PostTransaction
-Exec = /usr/bin/grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=ArcoLinux
+#Exec = /usr/bin/grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=ArcoLinux
+Exec = /bin/bash -c '
+if [ -d /sys/firmware/efi ]; then
+    /usr/bin/grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=ArcoLinux
+else
+    /usr/bin/grub-install --target=i386-pc /dev/sda
+fi
+'
